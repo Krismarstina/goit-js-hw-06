@@ -18,7 +18,7 @@ refs.buttonCreate.addEventListener("click", (event) => {
 function createBoxes(amount) {
   let width = 30;
   let height = 30;
-  let virtualBoxes = document.createDocumentFragment();
+  let array = [];
 
   for (let i = 0; i < amount; i++) {
     let box = document.createElement("div");
@@ -27,9 +27,9 @@ function createBoxes(amount) {
     box.style.backgroundColor = getRandomHexColor();
     width += 10;
     height += 10;
-    virtualBoxes.appendChild(box);
+    array.push(box);
   }
-  refs.boxes.appendChild(virtualBoxes);
+  refs.boxes.append(...array);
 }
 
 refs.buttonDestroy.addEventListener("click", () => {
